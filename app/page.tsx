@@ -1,112 +1,279 @@
 import Image from "next/image";
+import Subheader from "./components/SubHeader";
+import Header from "./components/Header";
+import MainSection from "./components/MainSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+    <main>
+      {/* <Subheader /> */}
+      <div className="main-nav-bg">
+        <Header />
+      </div>
+
+      <MainSection />
+
+      <section className="features-section">
+        <div className="container">
+          <div className="features-header">
+            <h1 className="features-heading-text">Our Expertise</h1>
+          </div>
+          <div className="features-area flex">
+            <div className="features-card flex">
+              <img src="./assets/webdev.png" alt="" />
+              <h3>Building Robust Digital Solutions</h3>
+              <p>
+                Develop high-performing, scalable, and secure websites tailored
+                to meet your business objectives with our expert web development
+                services.
+              </p>
+              <a href="#" className="secondary-button">
+                Learn more <i className="fa-solid fa-right-long"></i>
+              </a>
+            </div>
+            <div className="features-card flex">
+              <img src="./assets/webdesign.png" alt="" />
+              <h3>Creating Engaging Digital Experiences</h3>
+              <p>
+                Design visually stunning and user-friendly interfaces that
+                captivate your audience and provide an intuitive user
+                experience.
+              </p>
+              <a href="#" className="secondary-button">
+                Learn more <i className="fa-solid fa-right-long"></i>
+              </a>
+            </div>
+            <div className="features-card flex">
+              <img src="./assets/ecommerce.png" alt="" />
+              <h3>Empowering Your Online Business</h3>
+              <p>
+                Develop comprehensive ecommerce platforms that drive sales,
+                enhance customer engagement, and support your business growth.
+              </p>
+              <a href="#" className="secondary-button">
+                Learn more <i className="fa-solid fa-right-long"></i>
+              </a>
+            </div>
+            <div className="features-card flex">
+              <img src="./assets/Seo.png" alt="" />
+              <h3>Maximizing Visibility and Speed</h3>
+              <p>
+                Enhance your online presence with strategic SEO practices and
+                optimize website performance to ensure fast, seamless user
+                experiences.
+              </p>
+              <a href="#" className="secondary-button">
+                Learn More <i className="fa-solid fa-right-long"></i>
+              </a>
+            </div>
+            <div className="features-card flex">
+              <img src="./assets/aws.svg" alt="" />
+              <h3>Optimizing with Cloud Technologies</h3>
+              <p>
+                Transform your business operations with cloud solutions that
+                offer enhanced security, scalability, and performance.
+              </p>
+              <a href="#" className="secondary-button">
+                Learn more <i className="fa-solid fa-right-long"></i>
+              </a>
+            </div>
+            <div className="features-card flex">
+              <img src="./assets/cloud.png" alt="" />
+              <h3>Innovative Serverless Solutions</h3>
+              <p>
+                Utilize serverless architecture to build flexible,
+                cost-effective, and highly scalable applications tailored to
+                your specific needs.
+              </p>
+              <a href="#" className="secondary-button">
+                Learn more <i className="fa-solid fa-right-long"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="big-feature-section">
+        <div className="container flex big-feature-container">
+          <div className="feature-img">
+            <img src="./assets/service.svg" alt="" />
+          </div>
+          <div className="feature-desc flex">
+            <h3>Why Choose Us?</h3>
+            <div>
+              <ul>
+                <li>
+                  Innovative Solutions: We harness the power of modern
+                  technologies to deliver unique and effective web solutions.
+                </li>
+                <li>
+                  Client-Focused: Your success is our priority. We tailor our
+                  services to meet your specific needs and objectives.
+                </li>
+                <li>
+                  Expert Team: Our talented professionals are dedicated to
+                  excellence and continuous improvement.
+                </li>
+                <li>
+                  Results-Driven: We aim to provide measurable outcomes that
+                  drive your business forward.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="big-feature-section">
+        <div
+          className="container flex big-feature-container"
+          id="second-big-feature"
+        >
+          <div className="feature-img">
+            <img src="./assets/teamlead.svg" alt="" />
+          </div>
+          <div className="feature-desc flex">
+            <h3>Highly skilled and collaborative team</h3>
+            <p>
+              Our team of skilled professionals brings a wealth of expertise and
+              a forward-thinking mindset to every project. We pride ourselves on
+              our ability to adapt to the ever-evolving digital landscape,
+              ensuring that our clients benefit from the latest advancements and
+              trends in web development.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="big-feature-section">
+        <div className="container flex big-feature-container">
+          <div className="feature-img">
+            <img src="./assets/customer.svg" alt="" />
+          </div>
+          <div className="feature-desc flex">
+            <h3>Commitment to Customer Satisfaction</h3>
+            <p>
+              Our dedication to customer satisfaction is unwavering. We strive
+              to exceed client expectations by delivering exceptional service
+              and tailored solutions. Our team is committed to understanding
+              your unique needs and ensuring your success, fostering long-term
+              partnerships built on trust and excellence. We continuously seek
+              feedback and make improvements to guarantee that our clients
+              receive the highest level of satisfaction and support.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="examples-section">
+        <div className="container">
+          <div className="examples-header flex">
+            <h3 className="examples-heading-text">Our Insights and Articles</h3>
+            <a href="#" className="secondary-button">
+              Read articles <i className="fa-solid fa-right-long"></i>
+            </a>
+          </div>
+          <div className="examples-area flex">
+            <a href="#" className="examples-card">
+              <img src="./assets/bg-image.png" />
+              <h3 className="card-text">
+                Can user complete a task in my software interface?
+              </h3>
+            </a>
+            <a className="examples-card" href="#">
+              <img src="./assets/bg-image-node.png" />
+              <h3 className="card-text">
+                Can user complete a task in my software interface?
+              </h3>
+            </a>
+            <a className="examples-card" href="#">
+              <img src="./assets/bg-image.png" />
+              <h3 className="card-text">
+                Can user complete a task in my software interface?
+              </h3>
+            </a>
+            <a className="examples-card" href="#">
+              <img src="./assets/bg-image-node.png" />
+              <h3 className="card-text">
+                Can user complete a task in my software interface?
+              </h3>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="cta-section">
+        <div className="container flex cta-section-container">
+          <h2>Start testing today</h2>
+          <p>Take the guesswork out of design decisions</p>
+          <a href="#" className="primary-button">
+            Get Started
           </a>
         </div>
-      </div>
+      </section> */}
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <footer>
+        <div className="container flex footer-container">
+          <div>
+            <a href="#" className="company-logo">
+              <img src="./assets/asset 1.png" alt="company logo" />
+            </a>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+            <p>
+              Ellis bridge, Ahmedabad Gujarat, <br />
+              380006
+            </p>
+            <p>+91-8286168403</p>
+            <p>contact@mayostack.in</p>
+            <div className="flex footer-icons">
+              <img src="./assets/instagram.svg" className="contact-icon" />
+              <img src="./assets/linkedin.png" className="contact-icon" />
+              <img src="./assets/threads.svg" className="contact-icon" />
+            </div>
+          </div>
+          <div className="link-column flex">
+            <h4>Services</h4>
+            <a href="#" className="hover-link">
+              Web Application
+            </a>
+            <a href="#" className="hover-link">
+              Full Stack Development
+            </a>
+            <a href="#" className="hover-link">
+              MERN Stack Development
+            </a>
+            <a href="#" className="hover-link">
+              Testing & QA Services
+            </a>
+            <a href="#" className="hover-link">
+              UI/UX Design Services
+            </a>
+          </div>
+          <div className="link-column flex">
+            <h4>Company</h4>
+            <a href="#" className="hover-link">
+              About Us
+            </a>
+            <a href="#" className="hover-link">
+              Careers
+            </a>
+            <a href="#" className="hover-link">
+              Blogs
+            </a>
+            <a href="#" className="hover-link">
+              Portfolio
+            </a>
+            <a href="#" className="hover-link">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </footer>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="subfooter">
+        <div className="container flex subfooter-container">
+          Copyright © 2024 Mayostack Infosolutions Pvt Ltd. All Rights Reserved
+        </div>
       </div>
     </main>
   );
