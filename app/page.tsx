@@ -17,7 +17,12 @@ export default function Home() {
           </div>
           <div className="features-area flex">
             <div className="features-card flex">
-              <img src="./assets/webdev.png" alt="" />
+              <Image
+                width={100}
+                height={100}
+                src="./assets/webdev.png"
+                alt=""
+              />
               <h3>Building Robust Digital Solutions</h3>
               <p>
                 Develop high-performing, scalable, and secure websites tailored
@@ -29,7 +34,12 @@ export default function Home() {
               </a>
             </div>
             <div className="features-card flex">
-              <img src="./assets/webdesign.png" alt="" />
+              <Image
+                width={100}
+                height={100}
+                src="./assets/webdesign.png"
+                alt=""
+              />
               <h3>Creating Engaging Digital Experiences</h3>
               <p>
                 Design visually stunning and user-friendly interfaces that
@@ -41,7 +51,12 @@ export default function Home() {
               </a>
             </div>
             <div className="features-card flex">
-              <img src="./assets/ecommerce.png" alt="" />
+              <Image
+                width={100}
+                height={100}
+                src="./assets/ecommerce.png"
+                alt=""
+              />
               <h3>Empowering Your Online Business</h3>
               <p>
                 Develop comprehensive ecommerce platforms that drive sales,
@@ -52,7 +67,7 @@ export default function Home() {
               </a>
             </div>
             <div className="features-card flex">
-              <img src="./assets/Seo.png" alt="" />
+              <Image width={100} height={100} src="./assets/Seo.png" alt="" />
               <h3>Maximizing Visibility and Speed</h3>
               <p>
                 Enhance your online presence with strategic SEO practices and
@@ -64,7 +79,7 @@ export default function Home() {
               </a>
             </div>
             <div className="features-card flex">
-              <img src="./assets/aws.svg" alt="" />
+              <Image width={100} height={100} src="./assets/aws.svg" alt="" />
               <h3>Optimizing with Cloud Technologies</h3>
               <p>
                 Transform your business operations with cloud solutions that
@@ -75,7 +90,7 @@ export default function Home() {
               </a>
             </div>
             <div className="features-card flex">
-              <img src="./assets/cloud.png" alt="" />
+              <Image width={100} height={100} src="./assets/cloud.png" alt="" />
               <h3>Innovative Serverless Solutions</h3>
               <p>
                 Utilize serverless architecture to build flexible,
@@ -93,7 +108,7 @@ export default function Home() {
       <section className="big-feature-section">
         <div className="container flex big-feature-container">
           <div className="feature-img">
-            <img src="./assets/service.svg" alt="" />
+            <Image width={100} height={100} src="./assets/service.svg" alt="" />
           </div>
           <div className="feature-desc flex">
             <h3>Why Choose Us?</h3>
@@ -127,7 +142,12 @@ export default function Home() {
           id="second-big-feature"
         >
           <div className="feature-img">
-            <img src="./assets/teamlead.svg" alt="" />
+            <Image
+              width={100}
+              height={100}
+              src="./assets/teamlead.svg"
+              alt=""
+            />
           </div>
           <div className="feature-desc flex">
             <h3>Highly skilled and collaborative team</h3>
@@ -145,7 +165,12 @@ export default function Home() {
       <section className="big-feature-section">
         <div className="container flex big-feature-container">
           <div className="feature-img">
-            <img src="./assets/customer.svg" alt="" />
+            <Image
+              width={100}
+              height={100}
+              src="./assets/customer.svg"
+              alt=""
+            />
           </div>
           <div className="feature-desc flex">
             <h3>Commitment to Customer Satisfaction</h3>
@@ -178,19 +203,34 @@ export default function Home() {
               </h3>
             </a>
             <a className="examples-card" href="#">
-              <img src="./assets/bg-image-node.png" />
+              <Image
+                width={100}
+                height={100}
+                alt=""
+                src="./assets/bg-image-node.png"
+              />
               <h3 className="card-text">
                 Can user complete a task in my software interface?
               </h3>
             </a>
             <a className="examples-card" href="#">
-              <img src="./assets/bg-image.png" />
+              <Image
+                width={100}
+                height={100}
+                alt=""
+                src="./assets/bg-image.png"
+              />
               <h3 className="card-text">
                 Can user complete a task in my software interface?
               </h3>
             </a>
             <a className="examples-card" href="#">
-              <img src="./assets/bg-image-node.png" />
+              <Image
+                width={100}
+                height={100}
+                alt=""
+                src="./assets/bg-image-node.png"
+              />
               <h3 className="card-text">
                 Can user complete a task in my software interface?
               </h3>
