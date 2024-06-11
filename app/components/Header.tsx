@@ -1,56 +1,47 @@
 import Image from "next/image";
 import Subheader from "./SubHeader";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <div className="main-nav-bg">
       <Subheader />
       <nav className="main-nav container">
-        <a href="#" className="company-logo">
+        <Link href="/" className="company-logo">
           <Image
             width={560}
             height={560}
             src="/assets/asset 1.png"
             alt="co/mpany logo"
           />
-        </a>
+        </Link>
         <div className="nav-links" id="nav-links">
           <ul className="flex">
             <li>
-              <a href="#" className="hover-link">
-                Products
-              </a>
+              <Link href="/about-us" className="hover-link">
+                About us
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover-link">
-                Customer
-              </a>
+              <Link href="/services" className="hover-link">
+                Services
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover-link">
-                Pricing
-              </a>
+              <Link href="/portfolio" className="hover-link">
+                Portfolio
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover-link">
-                Resources
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover-link secondary-button">
-                Sign in
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover-link primary-button">
-                Sign up
-              </a>
+              <button className="hover-link primary-button">
+                Get Free Estimation
+              </button>
             </li>
           </ul>
         </div>
-        <a href="#" className="nav-toggle hover-link" id="nav-toggle">
+        <Link href="#" className="nav-toggle hover-link" id="nav-toggle">
           <i className="fa-solid fa-bars"></i>
-        </a>
+        </Link>
       </nav>
     </div>
   );

@@ -7,9 +7,6 @@ export default function Home() {
   return (
     <main>
       {/* <Subheader /> */}
-      <div className="main-nav-bg">
-        <Header />
-      </div>
 
       <MainSection />
 
@@ -211,70 +208,6 @@ export default function Home() {
           </a>
         </div>
       </section> */}
-
-      <footer>
-        <div className="container flex footer-container">
-          <div>
-            <a href="#" className="company-logo">
-              <img src="./assets/asset 1.png" alt="company logo" />
-            </a>
-
-            <p>
-              Ellis bridge, Ahmedabad Gujarat, <br />
-              380006
-            </p>
-            <p>+91-8286168403</p>
-            <p>contact@mayostack.in</p>
-            <div className="flex footer-icons">
-              <img src="./assets/instagram.svg" className="contact-icon" />
-              <img src="./assets/linkedin.png" className="contact-icon" />
-              <img src="./assets/threads.svg" className="contact-icon" />
-            </div>
-          </div>
-          <div className="link-column flex">
-            <h4>Services</h4>
-            <a href="#" className="hover-link">
-              Web Application
-            </a>
-            <a href="#" className="hover-link">
-              Full Stack Development
-            </a>
-            <a href="#" className="hover-link">
-              MERN Stack Development
-            </a>
-            <a href="#" className="hover-link">
-              Testing & QA Services
-            </a>
-            <a href="#" className="hover-link">
-              UI/UX Design Services
-            </a>
-          </div>
-          <div className="link-column flex">
-            <h4>Company</h4>
-            <a href="#" className="hover-link">
-              About Us
-            </a>
-            <a href="#" className="hover-link">
-              Careers
-            </a>
-            <a href="#" className="hover-link">
-              Blogs
-            </a>
-            <a href="#" className="hover-link">
-              Portfolio
-            </a>
-            <a href="#" className="hover-link">
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </footer>
-
-      <div className="subfooter">
-        <div className="container flex subfooter-container">
-          Copyright © 2024 Mayostack Infosolutions Pvt Ltd. All Rights Reserved
-        </div>
-      </div>
     </main>
   );
 }
