@@ -13,6 +13,8 @@ const Subheader = () => {
               src="/assets/icons8-phone-30.png"
               className="contact-icon"
               alt="Phone icon"
+              width={100}
+              height={100}
             />
             <p className="text-white font-semibold">{phoneNumber}</p>
           </div>
@@ -21,6 +23,8 @@ const Subheader = () => {
               src="/assets/icons8-email-50.png"
               className="contact-icon"
               alt="Email icon"
+              width={100}
+              height={100}
             />
             <p className="text-white font-semibold">{email}</p>
           </div>

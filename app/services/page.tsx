@@ -88,7 +88,7 @@ const Services: React.FC = () => {
         </div>
         <div className="features-area flex">
           {servicesData.map((service, index) => (
-            <div key={index} className="features-card flex">
+            <div key={service.title} className="features-card flex">
               <CustomImage
                 src={service.imageSrc}
                 alt={service.title}
