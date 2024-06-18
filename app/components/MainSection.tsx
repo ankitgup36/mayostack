@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const MainSection = () => {
   return (
@@ -16,9 +17,9 @@ const MainSection = () => {
             enhance user experiences, and position your business at the
             forefront of your industry.
           </p>
-          <a href="#" className="primary-button get-started-btn">
+          <Link href="#" className="primary-button get-started-btn">
             Get Started
-          </a>
+          </Link>
         </div>
         <div className="header-right">
           <Image
