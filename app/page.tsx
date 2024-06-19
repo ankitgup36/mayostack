@@ -24,7 +24,7 @@ const Home = () => {
         "Develop comprehensive ecommerce platforms that drive sales, enhance customer engagement, and support your business growth.",
     },
     {
-      src: "/assets/Seo.png",
+      src: "/assets/seo.png",
       title: "Maximizing Visibility and Speed",
       description:
         "Enhance your online presence with strategic SEO practices and optimize website performance to ensure fast, seamless user experiences.",

@@ -2,13 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ExampleCard: React.FC<{ src: string; alt: string; text: string }> = ({
-  src,
-  alt,
-  text,
-}) => (
+const ExampleCard: React.FC<{ text: string }> = ({ text }) => (
   <Link className="examples-card" href="#">
-    <Image width={100} height={100} alt={alt} src={src} />
+    {/* <Image width={100} height={100} alt={alt} src={src} /> */}
     <h3 className="card-text">{text}</h3>
   </Link>
 );

@@ -11,7 +11,7 @@ const Header = () => {
           <Image
             width={560}
             height={560}
-            src="/assets/asset 1.png"
+            src="/assets/asset 1.webp"
             alt="company logo"
             priority
           />

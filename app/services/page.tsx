@@ -57,7 +57,7 @@ const servicesData: Service[] = [
     learnMoreLink: "#",
   },
   {
-    imageSrc: "/assets/Seo.png",
+    imageSrc: "/assets/seo.png",
     title: "Maximizing Visibility and Speed",
     description:
       "Enhance your online presence with strategic SEO practices and optimize website performance to ensure fast, seamless user experiences.",

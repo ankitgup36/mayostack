@@ -5,7 +5,7 @@ import React from "react";
 const footerData = {
   company: {
     logo: {
-      src: "/assets/asset 1.png",
+      src: "/assets/asset 1.webp",
       alt: "company logo",
       width: 50,
       height: 50,
