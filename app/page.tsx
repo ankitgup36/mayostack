@@ -7,39 +7,39 @@ const Home = () => {
   const features = [
     {
       src: "/assets/webdev.png",
-      title: "Building Robust Digital Solutions",
+      title: "MERN Stack Development",
       description:
-        "Develop high-performing, scalable, and secure websites tailored to meet your business objectives with our expert web development services.",
+        "Build dynamic, responsive web applications with our expertise in the MERN stack, ensuring efficient, scalable, and high-performance solutions.",
     },
     {
       src: "/assets/webdesign.png",
-      title: "Creating Engaging Digital Experiences",
+      title: "UI/UX Design Services",
       description:
-        "Design visually stunning and user-friendly interfaces that captivate your audience and provide an intuitive user experience.",
+        "Craft visually appealing and user-centric designs that provide an engaging and intuitive user experience, enhancing customer satisfaction.",
     },
     {
       src: "/assets/ecommerce.png",
-      title: "Empowering Your Online Business",
+      title: "E-commerce Solutions",
       description:
-        "Develop comprehensive ecommerce platforms that drive sales, enhance customer engagement, and support your business growth.",
+        "Empower your online business with robust e-commerce platforms that enhance customer engagement and drive sales growth.",
     },
     {
       src: "/assets/seo.png",
-      title: "Maximizing Visibility and Speed",
+      title: "SEO and Optimization",
       description:
-        "Enhance your online presence with strategic SEO practices and optimize website performance to ensure fast, seamless user experiences.",
+        "Boost your online visibility with strategic SEO practices and optimize your website for faster performance and a seamless user experience.",
     },
     {
       src: "/assets/aws.svg",
-      title: "Optimizing with Cloud Technologies",
+      title: "AWS Serverless Architecture",
       description:
-        "Transform your business operations with cloud solutions that offer enhanced security, scalability, and performance.",
+        "Leverage AWS serverless architecture to create flexible, scalable, and cost-effective solutions that meet your unique business needs.",
     },
     {
       src: "/assets/cloud.png",
-      title: "Innovative Serverless Solutions",
+      title: "Quality Assurance",
       description:
-        "Utilize serverless architecture to build flexible, cost-effective, and highly scalable applications tailored to your specific needs.",
+        "Ensure your applications are reliable, efficient, and bug-free with our comprehensive QA services, focusing on delivering top-notch quality.",
     },
   ];
 
@@ -94,7 +94,7 @@ const Home = () => {
           <div className="features-header">
             <h1 className="features-heading-text">Our Expertise</h1>
           </div>
-          <div className="features-area flex">
+          <div className="features-area flex gap-5  xl:gap-10">
             {features.map((feature) => (
               <FeatureCard key={feature.title} {...feature} />
             ))}
@@ -102,8 +102,8 @@ const Home = () => {
         </div>
       </section>
 
-      {bigFeatures.map((feature) => (
-        <BigFeatureSection key={feature.title} {...feature} />
+      {bigFeatures.map((feature, index) => (
+        <BigFeatureSection key={feature.title} index={index} {...feature} />
       ))}
 
       <ExamplesSection />

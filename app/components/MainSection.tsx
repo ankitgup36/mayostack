@@ -4,7 +4,7 @@ import Link from "next/link";
 const MainSection = () => {
   return (
     <header>
-      <div className="container header-section flex">
+      <div className="container header-section  flex-col-reverse md:flex-row  flex">
         <div className="header-left">
           <h1>
             Empowering Your Digital Journey with Excellence At Mayostack
@@ -21,7 +21,7 @@ const MainSection = () => {
             Get Started
           </Link>
         </div>
-        <div className="header-right">
+        <div className="header-right hidden md:block">
           <Image
             width={100}
             height={100}

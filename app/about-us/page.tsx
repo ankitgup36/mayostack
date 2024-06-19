@@ -3,7 +3,7 @@ const AboutUs = () => {
     <section>
       <div className="container header-section max-w-[30%] flex flex-col-reverse">
         <div className="header-left flex-1">
-          <h1>About us</h1>
+          <h1 className="text-center mb-5">About us</h1>
           <p>
             Welcome to Mayostack Infosolutions, where innovation meets
             affordability. As a dynamic and forward-thinking IT services

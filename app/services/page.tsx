@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CustomImage: React.FC<{
-  src: string;
+  imageSrc: string;
   alt: string;
   width: number;
   height: number;
   className?: string;
-}> = ({ src, alt, width, height, className }) => (
+}> = ({ imageSrc, alt, width, height, className }) => (
   <Image
-    src={src}
+    src={imageSrc}
     alt={alt}
     width={width}
     height={height}
@@ -34,48 +34,48 @@ interface Service {
   learnMoreLink: string;
 }
 
-const servicesData: Service[] = [
+const servicesData = [
   {
     imageSrc: "/assets/webdev.png",
-    title: "Building Robust Digital Solutions",
-    description:
-      "Develop high-performing, scalable, and secure websites tailored to meet your business objectives with our expert web development services.",
+    title: "MERN Stack Development",
     learnMoreLink: "#",
+    description:
+      "Build dynamic, responsive web applications with our expertise in the MERN stack, ensuring efficient, scalable, and high-performance solutions.",
   },
   {
     imageSrc: "/assets/webdesign.png",
-    title: "Creating Engaging Digital Experiences",
-    description:
-      "Design visually stunning and user-friendly interfaces that captivate your audience and provide an intuitive user experience.",
+    title: "UI/UX Design Services",
     learnMoreLink: "#",
+    description:
+      "Craft visually appealing and user-centric designs that provide an engaging and intuitive user experience, enhancing customer satisfaction.",
   },
   {
     imageSrc: "/assets/ecommerce.png",
-    title: "Empowering Your Online Business",
-    description:
-      "Develop comprehensive ecommerce platforms that drive sales, enhance customer engagement, and support your business growth.",
+    title: "E-commerce Solutions",
     learnMoreLink: "#",
+    description:
+      "Empower your online business with robust e-commerce platforms that enhance customer engagement and drive sales growth.",
   },
   {
     imageSrc: "/assets/seo.png",
-    title: "Maximizing Visibility and Speed",
-    description:
-      "Enhance your online presence with strategic SEO practices and optimize website performance to ensure fast, seamless user experiences.",
+    title: "SEO and Optimization",
     learnMoreLink: "#",
+    description:
+      "Boost your online visibility with strategic SEO practices and optimize your website for faster performance and a seamless user experience.",
   },
   {
     imageSrc: "/assets/aws.svg",
-    title: "Optimizing with Cloud Technologies",
-    description:
-      "Transform your business operations with cloud solutions that offer enhanced security, scalability, and performance.",
+    title: "AWS Serverless Architecture",
     learnMoreLink: "#",
+    description:
+      "Leverage AWS serverless architecture to create flexible, scalable, and cost-effective solutions that meet your unique business needs.",
   },
   {
     imageSrc: "/assets/cloud.png",
-    title: "Innovative Serverless Solutions",
-    description:
-      "Utilize serverless architecture to build flexible, cost-effective, and highly scalable applications tailored to your specific needs.",
+    title: "Quality Assurance",
     learnMoreLink: "#",
+    description:
+      "Ensure your applications are reliable, efficient, and bug-free with our comprehensive QA services, focusing on delivering top-notch quality.",
   },
 ];
 
@@ -90,7 +90,7 @@ const Services: React.FC = () => {
           {servicesData.map((service, index) => (
             <div key={service.title} className="features-card flex">
               <CustomImage
-                src={service.imageSrc}
+                imageSrc={service.imageSrc}
                 alt={service.title}
                 width={100}
                 height={100}

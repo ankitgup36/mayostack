@@ -7,7 +7,7 @@ const Subheader = () => {
   return (
     <div className="top-banner">
       <div className="container">
-        <div className="banner-text flex gap-20 justify-end">
+        <div className="banner-text flex flex-col sm:flex-row sm:gap-20 items-end">
           <div className="flex gap-2">
             <LucidePhone />
             <p className="text-white font-semibold">{phoneNumber}</p>

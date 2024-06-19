@@ -72,7 +72,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="container flex footer-container">
+      <div className="container flex footer-container items-center">
         <div>
           <CustomLink href="#" className="company-logo">
             <CustomImage {...company.logo} />
@@ -80,7 +80,7 @@ const Footer = () => {
           <p>{company.address}</p>
           <p>{company.phone}</p>
           <p>{company.email}</p>
-          <div className="flex footer-icons">
+          <div className="flex footer-icons justify-center md:justify-start">
             {company.socialIcons.map((icon) => (
               <CustomImage key={icon.alt} {...icon} className="contact-icon" />
             ))}

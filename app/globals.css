@@ -186,13 +186,12 @@ section ul li{
 
 /* header section */
 
-header {
+/* header {
   padding: 50px var(--padding-inline-section) 0;
-}
+} */
 
 .header-section {
   justify-content: center;
-  gap: 50px;
   margin-block: 80px;
 }
 
@@ -254,7 +253,6 @@ header {
 .features-area {
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
   margin-top: 20px;
   align-items: baseline;
 }
@@ -281,7 +279,7 @@ header {
 }
 
 .big-feature-container {
-  gap: 30px;
+  gap: 80px;
 }
 
 #second-big-feature {
@@ -299,8 +297,6 @@ header {
 
 .feature-desc {
   flex-direction: column;
-  align-items: flex-start;
-  max-width: 60%;
   gap: 10px;
 }
 
