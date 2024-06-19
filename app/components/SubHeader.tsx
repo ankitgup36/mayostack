@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { LucideMail, LucidePhone } from "lucide-react";
 
 const Subheader = () => {
   const phoneNumber = "+91 8286168403";
@@ -9,23 +9,11 @@ const Subheader = () => {
       <div className="container">
         <div className="banner-text flex gap-20 justify-end">
           <div className="flex gap-2">
-            <Image
-              src="/assets/icons8-phone-30.png"
-              className="contact-icon"
-              alt="Phone icon"
-              width={100}
-              height={100}
-            />
+            <LucidePhone />
             <p className="text-white font-semibold">{phoneNumber}</p>
           </div>
           <div className="flex gap-2">
-            <Image
-              src="/assets/icons8-email-50.png"
-              className="contact-icon"
-              alt="Email icon"
-              width={100}
-              height={100}
-            />
+            <LucideMail />
             <p className="text-white font-semibold">{email}</p>
           </div>
         </div>

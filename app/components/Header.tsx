@@ -12,7 +12,8 @@ const Header = () => {
             width={560}
             height={560}
             src="/assets/asset 1.png"
-            alt="co/mpany logo"
+            alt="company logo"
+            priority
           />
         </Link>
         <div className="nav-links" id="nav-links">

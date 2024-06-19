@@ -7,7 +7,7 @@ const FeatureCard: React.FC<{
   description: string;
 }> = ({ src, title, description }) => (
   <div className="features-card flex">
-    <Image width={100} height={100} src={src} alt={title} />
+    <Image width={100} height={100} src={src} alt={title} priority />
     <h3>{title}</h3>
     <p>{description}</p>
     <Link href="#" className="secondary-button">

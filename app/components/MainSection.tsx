@@ -25,8 +25,9 @@ const MainSection = () => {
           <Image
             width={100}
             height={100}
-            src="./assets/asset 2.svg"
-            alt="he/ro image"
+            src="/assets/asset 2.svg"
+            alt="hero image"
+            priority
           />
         </div>
       </div>
