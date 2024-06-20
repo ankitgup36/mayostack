@@ -4,6 +4,8 @@ import { poppins } from "./fonts";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SubFooter from "./components/SubFooter";
+import Link from "next/link";
+import { useState } from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
