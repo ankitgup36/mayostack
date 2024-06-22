@@ -39,6 +39,11 @@ const Header = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/blogs" className="hover-link">
+                  Blogs
+                </Link>
+              </li>
+              <li>
                 <button className="hover-link primary-button">
                   Get Free Estimation
                 </button>
@@ -81,6 +86,11 @@ const Header = () => {
                 onClick={() => setShowNavLinks((prev) => !prev)}
               >
                 Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link href="/blogs" className="hover-link">
+                Blogs
               </Link>
             </li>
             <li>
