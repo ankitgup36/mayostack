@@ -39,28 +39,16 @@
     width: max-content;
   }
   
-  .category.travel {
-    background-color: #ff7857;
+  .category.node {
+    background-color: #148b07;
   }
   
-  .culture {
-    background-color: #ffb14f;
+  .category.react {
+    background-color: #2c1dd4;
   }
   
-  .food {
-    background-color: #7fb881;
-  }
-  
-  .fashion {
-    background-color: #ff7887;
-  }
-  
-  .coding {
-    background-color: #775aec;
-  }
-  
-  .style {
-    background-color: #789cff;
+  .category.javascript {
+    background-color: #e8e534;
   }
   
   .postTitle {

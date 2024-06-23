@@ -3,7 +3,7 @@ import styles from "./singlePage.module.css";
 import Image from "next/image";
 
 const getData = async (slug: string) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`http://localhost:5000/posts/${slug}`, {
     cache: "no-store",
   });
 
@@ -17,46 +17,56 @@ const getData = async (slug: string) => {
 const SinglePage = async ({ params }: any) => {
   const { slug } = params;
 
-  const data = await getData(slug);
+  const { post: data } = await getData(slug);
+  console.log(data);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.infoContainer}>
-        <div className={styles.textContainer}>
-          <h1 className={styles.title}>{data?.title}</h1>
-          <div className={styles.user}>
-            {data?.user?.image && (
+    <div className="container mt-10">
+      <div className={styles.container}>
+        <div className={styles.infoContainer}>
+          <div className={styles.textContainer}>
+            <h1 className={styles.title}>{data?.title}</h1>
+
+            <div className={styles.user}>
               <div className={styles.userImageContainer}>
                 <Image
-                  src={data.user.image}
+                  src={"/assets/p1.jpeg"}
                   alt=""
                   fill
                   className={styles.avatar}
                 />
               </div>
-            )}
-            <div className={styles.userTextContainer}>
-              <span className={styles.username}>{data?.user.name}</span>
-              <span className={styles.date}>01.01.2024</span>
+
+              <div className={styles.userTextContainer}>
+                <span className={styles.username}>{"Ankit Gupta"}</span>
+                <span className={styles.date}>
+                  {data?.createdAt?.split("T")[0]}
+                </span>
+              </div>
             </div>
           </div>
+          {data?.images && (
+            <div className={styles.imageContainer}>
+              <Image
+                src={data?.images?.[0]}
+                alt=""
+                fill
+                className={styles.image}
+              />
+            </div>
+          )}
         </div>
-        {data?.img && (
-          <div className={styles.imageContainer}>
-            <Image src={data.img} alt="" fill className={styles.image} />
+        <div className={styles.content}>
+          <div className={styles.post}>
+            {data?.description ? (
+              <div
+                className={styles.description}
+                dangerouslySetInnerHTML={{ __html: data?.description }}
+              />
+            ) : null}
           </div>
-        )}
-      </div>
-      <div className={styles.content}>
-        <div className={styles.post}>
-          {data?.desc ? (
-            <div
-              className={styles.description}
-              dangerouslySetInnerHTML={{ __html: data?.desc }}
-            />
-          ) : null}
+          <Menu />
         </div>
-        <Menu />
       </div>
     </div>
   );

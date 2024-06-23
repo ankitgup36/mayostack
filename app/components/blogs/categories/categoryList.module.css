@@ -8,8 +8,8 @@
 .categories {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: start;
+  gap: 50px;
 }
 
 .category {
@@ -23,16 +23,16 @@
   border-radius: 10px;
 }
 
-.category.style {
-  background-color: #57c4ff31;
+.category.node {
+  background-color: #148b0742;
 }
 
-.category.fashion {
-  background-color: #da85c731;
+.category.react {
+  background-color: #2c1dd431;
 }
 
-.category.food {
-  background-color: #7fb88133;
+.category.javascript {
+  background-color: #e8e53463;
 }
 
 .category.travel {

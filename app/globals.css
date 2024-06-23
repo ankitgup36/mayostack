@@ -525,3 +525,7 @@ footer {
 .quill > .ql-container > .ql-editor.ql-blank::before{
   color: #b3b3b1;
 }
+
+strong{
+  font-weight: 600;
+}

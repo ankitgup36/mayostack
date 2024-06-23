@@ -1,28 +1,41 @@
 import React from "react";
 import styles from "./featured.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
-const Featured = () => {
+const getData = async () => {
+  const res = await fetch(`http://localhost:5000/get-featured-post`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    return null;
+  }
+
+  return res.json();
+};
+
+const Featured = async () => {
+  const { post } = await getData();
+
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>
-        <b>Hey, lama dev here!</b> Discover my stories and creative ideas.
-      </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src="/assets/p1.jpeg" alt="" fill className={styles.image} />
+          <Image
+            src="/assets/p1.jpeg"
+            alt=""
+            fill
+            className={styles.image}
+            priority
+          />
         </div>
         <div className={styles.textContainer}>
-          <h1 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet alim consectetur adipisicing elit.
-          </h1>
-          <p className={styles.postDesc}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Cupiditate, quam nisi magni ea laborum inventore voluptatum
-            laudantium repellat ducimus unde aspernatur fuga. Quo, accusantium
-            quisquam! Harum unde sit culpa debitis.
-          </p>
-          <button className={"secondary-button"}>Read More</button>
+          <h1 className={styles.postTitle}>{post?.title}</h1>
+          <p className={styles.postDesc}>{post?.summary}</p>
+          <Link href={`/posts/${post?.slug}`}>
+            <button className={styles.link}>Read More</button>
+          </Link>
         </div>
       </div>
     </div>
