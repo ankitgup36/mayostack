@@ -3,6 +3,7 @@
 import React from "react";
 import styles from "./pagination.module.css";
 import { useRouter } from "next/navigation";
+import useNavigateWithParams from "@/app/hooks/useNavigateWithParams";
 
 const Pagination = ({
   page,
@@ -14,20 +15,29 @@ const Pagination = ({
   hasNext: boolean;
 }) => {
   const router = useRouter();
+  const { generateUrlWithParams } = useNavigateWithParams();
 
   return (
     <div className={styles.container}>
       <button
         className={styles.button}
         disabled={!hasPrev}
-        onClick={() => router.push(`?page=${page - 1}`)}
+        onClick={() =>
+          router.push(
+            generateUrlWithParams("", { page: (page - 1).toString() })
+          )
+        }
       >
         Previous
       </button>
       <button
         disabled={!hasNext}
         className={styles.button}
-        onClick={() => router.push(`?page=${page + 1}`)}
+        onClick={() =>
+          router.push(
+            generateUrlWithParams("", { page: (page + 1).toString() })
+          )
+        }
       >
         Next
       </button>

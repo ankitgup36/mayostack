@@ -19,11 +19,14 @@ const getData = async () => {
 const MenuPosts = async ({ withImage }: { withImage: boolean }) => {
   const { posts = [] } = await getData();
 
-  console.log(posts?.slice(posts?.length - 3, posts?.length));
   return (
     <div className={styles.items}>
       {posts?.slice(posts?.length - 3, posts?.length)?.map((post: any) => (
-        <Link href="/" className={styles.item} key={post.slug}>
+        <Link
+          href={`/posts/${post.slug}`}
+          className={styles.item}
+          key={post.slug}
+        >
           {withImage && (
             <div className={styles.imageContainer}>
               <Image
@@ -35,12 +38,10 @@ const MenuPosts = async ({ withImage }: { withImage: boolean }) => {
             </div>
           )}
           <div className={styles.textContainer}>
-            <span
-              className={`${styles.category} ${styles[post?.catSlug]}`}
-            >
+            <span className={`${styles.category} ${styles[post?.catSlug]}`}>
               {categories.find((cat) => cat.slug === post?.catSlug)?.title}
             </span>
-            <h3 className={styles.postTitle}>{post?.title}</h3>
+            <h3 className={`${styles.postTitle} capitalize`}>{post?.title}</h3>
             <div className={styles.detail}>
               <span className={styles.username}>John Doe</span>
               <span className={styles.date}> - 10.03.2023</span>

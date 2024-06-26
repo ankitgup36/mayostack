@@ -18,14 +18,13 @@ const SinglePage = async ({ params }: any) => {
   const { slug } = params;
 
   const { post: data } = await getData(slug);
-  console.log(data);
 
   return (
     <div className="container mt-10">
       <div className={styles.container}>
         <div className={styles.infoContainer}>
           <div className={styles.textContainer}>
-            <h1 className={styles.title}>{data?.title}</h1>
+            <h1 className={`${styles.title} capitalize`}>{data?.title}</h1>
 
             <div className={styles.user}>
               <div className={styles.userImageContainer}>

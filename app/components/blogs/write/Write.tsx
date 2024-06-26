@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import styles from "./writePage.module.css";
-import { useState } from "react";
+import { use, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
 import ReactQuill from "react-quill";
-import { categories } from "@/app/utils";
+import { Authors, categories } from "@/app/utils";
 
 const Write = () => {
   const router = useRouter();
@@ -15,7 +15,10 @@ const Write = () => {
   const [value, setValue] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [catSlug, setCatSlug] = useState<string>("");
+  const [user, setUser] = useState<string>("");
   const [summary, setSummary] = useState<string>("");
+  const [image, setImage] = useState(null);
+  const [preview, setPreview] = useState("/assets/placeholder.png");
 
   const slugify = (str: string) =>
     str
@@ -85,6 +88,18 @@ const Write = () => {
     "video",
   ];
 
+  const handleImageChange = (e: any) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <div className="container">
       <div className={`${styles.container}`}>
@@ -94,6 +109,25 @@ const Write = () => {
           className={styles.input}
           onChange={(e) => setTitle(e.target.value)}
         />
+
+        <div className="flex justify-between container">
+          <input
+            type="file"
+            id="image"
+            onChange={handleImageChange}
+            style={{ display: "none" }}
+          />
+          <button className={styles.addButton}>
+            <label htmlFor="image">
+              <Image src="/assets/image.png" alt="" width={100} height={100} />
+            </label>
+          </button>
+
+          <div className="relative w-80 h-80">
+            <Image alt="blog" fill src={preview} />
+          </div>
+        </div>
+
         <select
           className={styles.select}
           onChange={(e) => setCatSlug(e.target.value)}
@@ -101,6 +135,17 @@ const Write = () => {
           {categories.map((cat) => (
             <option value={cat.slug} key={cat.slug}>
               {cat.title}
+            </option>
+          ))}
+        </select>
+        <select
+          className={styles.select}
+          onChange={(e) => setUser(e.target.value)}
+          value={user}
+        >
+          {Authors.map((user) => (
+            <option value={user.id} key={user.id}>
+              {user.authorName}
             </option>
           ))}
         </select>
@@ -114,37 +159,7 @@ const Write = () => {
           <button className={styles.button} onClick={() => setOpen(!open)}>
             <Image src="/assets/plus.png" alt="" width={16} height={16} />
           </button>
-          {open && (
-            <div className={styles.add}>
-              <input
-                type="file"
-                id="image"
-                onChange={(e) => setFile(e?.target?.files?.[0] ?? null)}
-                style={{ display: "none" }}
-              />
-              <button className={styles.addButton}>
-                <label htmlFor="image">
-                  <Image
-                    src="/assets/image.png"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                </label>
-              </button>
-              <button className={styles.addButton}>
-                <Image
-                  src="/assets/external.png"
-                  alt=""
-                  width={16}
-                  height={16}
-                />
-              </button>
-              <button className={styles.addButton}>
-                <Image src="/assets/video.png" alt="" width={16} height={16} />
-              </button>
-            </div>
-          )}
+
           <ReactQuill
             className={styles.textArea}
             theme="bubble"
