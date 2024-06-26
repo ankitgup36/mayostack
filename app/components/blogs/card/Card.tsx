@@ -1,13 +1,30 @@
 import Image from "next/image";
 import styles from "./card.module.css";
 import Link from "next/link";
+import { AWS_FETCH_FILE_URL } from "@/app/utils/api";
 
-const Card = ({ key, item }: { key: string; item: any }) => {
+const Card = async ({ key, item }: { key: string; item: any }) => {
+  console.log("came here");
+  const imageResponse = await fetch(AWS_FETCH_FILE_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      fileName: item.images?.[0],
+    }),
+  });
+
+  const body = await imageResponse.json();
+  const file = body.body.fileContent;
+
+  console.log(file);
+
   return (
     <div className={styles.container} key={key}>
       {item.images && (
         <div className={styles.imageContainer}>
-          <Image src={item.images?.[0]} alt="" fill className={styles.image} />
+          <Image src={file} alt="" fill className={styles.image} />
         </div>
       )}
       <div className={styles.textContainer}>

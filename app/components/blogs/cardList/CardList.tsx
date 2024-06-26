@@ -3,10 +3,11 @@ import styles from "./cardList.module.css";
 import Card from "../card/Card";
 import Pagination from "../pagination/Pagination";
 import { redirect } from "next/navigation";
+import { URL_END_POINT } from "@/app/utils/api";
 
 const getData = async (page: number, cat: string) => {
   const res = await fetch(
-    `http://localhost:5000/get-all-posts?page=${page}${
+    `${URL_END_POINT}/get-all-posts?page=${page}${
       cat ? `&cat=${cat}` : ""
     }`,
     {

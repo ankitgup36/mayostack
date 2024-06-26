@@ -3,9 +3,10 @@ import Link from "next/link";
 import React from "react";
 import styles from "./menuPosts.module.css";
 import { categories } from "@/app/utils";
+import { URL_END_POINT } from "@/app/utils/api";
 
 const getData = async () => {
-  const res = await fetch(`http://localhost:5000/get-all-posts`, {
+  const res = await fetch(`${URL_END_POINT}/get-all-posts`, {
     cache: "no-store",
   });
 
