@@ -24,7 +24,7 @@ const Card = async ({ key, item }: { key: string; item: any }) => {
     <div className={styles.container} key={key}>
       {item.images && (
         <div className={styles.imageContainer}>
-          <Image src={file} alt="" fill className={styles.image} />
+          <Image src={file} alt="" fill className={styles.image} priority />
         </div>
       )}
       <div className={styles.textContainer}>

@@ -1,8 +1,10 @@
-import { useState } from "react";
+"use client";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import ReactQuill from "react-quill";
+import styles from "./writePage.module.css";
+import { use, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
+import { useRouter } from "next/navigation";
+import ReactQuill from "react-quill";
 import { Authors, categories } from "@/app/utils";
 import { AWS_GENETATE_PRE_SIGNED_URL, URL_END_POINT } from "@/app/utils/api";
 
@@ -121,8 +123,13 @@ const Write = () => {
       [{ header: "1" }, { header: "2" }, { font: [] }],
       [{ size: [] }],
       ["bold", "italic", "underline", "strike", "blockquote"],
-      [{ list: "ordered" }, { list: "bullet" }],
-      ["link"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      ["link", "image", "video"],
       ["clean"],
     ],
     clipboard: {
@@ -141,19 +148,22 @@ const Write = () => {
     "blockquote",
     "list",
     "bullet",
+    "indent",
     "link",
+    "image",
+    "video",
   ];
 
   return (
     <div className="container">
-      <div className="container">
+      <div className={`${styles.container}`}>
         <input
           type="text"
           placeholder="Title"
-          className="input"
-          value={title}
+          className={styles.input}
           onChange={(e) => setTitle(e.target.value)}
         />
+
         <div className="flex justify-between container">
           <input
             type="file"
@@ -161,16 +171,21 @@ const Write = () => {
             onChange={handleImageChange}
             style={{ display: "none" }}
           />
-          <button className="addButton">
+          <button className={styles.addButton}>
             <label htmlFor="image">
               <Image src="/assets/image.png" alt="" width={100} height={100} />
             </label>
           </button>
+
           <div className="relative w-80 h-80">
             <Image alt="blog" fill src={preview} />
           </div>
         </div>
-        <select className="select" onChange={(e) => setCatSlug(e.target.value)}>
+
+        <select
+          className={styles.select}
+          onChange={(e) => setCatSlug(e.target.value)}
+        >
           {categories.map((cat) => (
             <option value={cat.slug} key={cat.slug}>
               {cat.title}
@@ -178,7 +193,7 @@ const Write = () => {
           ))}
         </select>
         <select
-          className="select"
+          className={styles.select}
           onChange={(e) => setUser(e.target.value)}
           value={user}
         >
@@ -190,16 +205,17 @@ const Write = () => {
         </select>
         <textarea
           placeholder="write summery...."
-          className="textarea"
+          className={styles.textarea}
           value={summary}
           onChange={(e) => setSummary(e.target.value)}
         />
-        <div className="editor">
-          <button className="button" onClick={() => setOpen(!open)}>
+        <div className={styles.editor}>
+          <button className={styles.button} onClick={() => setOpen(!open)}>
             <Image src="/assets/plus.png" alt="" width={16} height={16} />
           </button>
+
           <ReactQuill
-            className="textArea"
+            className={styles.textArea}
             theme="bubble"
             value={value}
             onChange={setValue}
@@ -208,7 +224,7 @@ const Write = () => {
             placeholder="Tell your story..."
           />
         </div>
-        <button className="publish" onClick={handleSubmit}>
+        <button className={styles.publish} onClick={handleSubmit}>
           Publish
         </button>
       </div>
